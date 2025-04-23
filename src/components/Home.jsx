@@ -1,6 +1,45 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { ReactTyped as Typed } from "react-typed";
+
+
 const Home = () => {
+
+    const experiences = [
+        {
+            title: "Developer",
+            company: "Source of Supply",
+            date: "JUL 2022 – PRESENT",
+            points: [
+                "I'm a passionate Frontend Developer with a strong foundation in modern web technologies. I specialize in building responsive, user-friendly interfaces using HTML, CSS, and JavaScript, with advanced experience in React for dynamic, component-based UI development."
+            ]
+        },
+        {
+            title: "UI/UX Expert",
+            company: "Topicals",
+            date: "JUN 2021 – PRESENT",
+            points: [
+                "I’m skilled in Tailwind CSS and Styled Components, allowing me to create clean, scalable, and maintainable styles with speed and consistency. I also bring life to interfaces using Framer Motion, crafting smooth, engaging animations that enhance user experience."
+            ]
+        },
+        {
+            title: "Senior Front-End Developer & UI/UX Designer",
+            company: "StudioNow",
+            date: "NOV 2020 – FEB 2021",
+            points: [
+                "My focus is on writing clean, performant code and delivering pixel-perfect designs that not only look great but also function seamlessly across devices. I'm constantly learning and evolving, staying up-to-date with the latest trends and best practices in frontend development."
+            ]
+        },
+    ];
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.3, duration: 0.5 },
+        }
+    };
 
     const pageVariants = {
         initial: { opacity: 0, y: 20 },
@@ -17,8 +56,64 @@ const Home = () => {
             exit="exit"
             transition={{ duration: 0.5 }}
             className={`text-white flex justify-end lg:items-center h-screen `} style={{ fontFamily: "var(--JetBrains)" }}>
-            {/* <div className="w-1/2 ">Home</div> */}
-            <div className="w-1/2 mt-[10%] md:mt-8 lg:mt-0 text-red-500 z-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nostrum id architecto nulla eos eum nobis perspiciatis asperiores ipsam! Perferendis, autem iste nihil vitae reprehenderit id dolores deserunt mollitia atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus labore dolores, blanditiis ullam nemo expedita, corporis ipsum tempore laudantium laborum necessitatibus itaque id rerum neque fugit laboriosam non inventore mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, fugit dicta? Voluptatem exercitationem iusto veritatis iure aut. Expedita doloribus quo ab excepturi optio. Quidem nam in tempore officia cupiditate commodi nulla officiis sed nihil modi quo ex illum, quibusdam porro perferendis, laboriosam quam quas natus corrupti incidunt alias eaque atque quisquam! Inventore enim provident quasi doloribus debitis ea nam aliquid et atque sit facilis, molestiae sunt, rerum error maxime porro! Pariatur blanditiis ipsa dolorum nostrum nisi autem ab, necessitatibus veritatis voluptas nesciunt dolores? Vero eius possimus et iure aut blanditiis adipisci, assumenda quidem cum reiciendis incidunt ea saepe provident tenetur ab qui aspernatur unde nostrum ex! Illum mollitia velit deserunt, veniam aperiam dolor eveniet aspernatur doloremque id quae quibusdam tenetur suscipit dolores tempora vel. Corrupti eius, nulla repudiandae iste quam eum magnam quae veritatis. Possimus officiis facere iusto totam, earum quos! Aut, hic quos blanditiis quia quibusdam id doloremque pariatur molestias adipisci rem. At aliquam illo quod beatae dicta animi ex impedit minus, cumque laboriosam tenetur obcaecati voluptatum, deleniti possimus. Officia odio eos assumenda delectus vero. Officia dolore quam, minus nam, ut itaque rerum tenetur corrupti magnam modi illum iusto, consequuntur at. Fugit, dolores! Explicabo laborum blanditiis voluptatem aperiam, molestias hic reprehenderit consectetur repellendus repudiandae autem minima vero sit ut rem quo, quae exercitationem, ex quia provident itaque culpa iste inventore! Consequuntur, quo, suscipit magni optio vitae eos facilis omnis earum accusantium ab odio nemo consectetur labore praesentium fuga impedit. Doloremque, molestiae possimus placeat atque exercitationem provident iure eveniet quasi, assumenda magnam dignissimos tempora quam reprehenderit explicabo ipsa laboriosam. Ratione earum consequuntur, laboriosam ipsa libero nobis tempora nam placeat odio, dolorum eligendi ipsam eius labore officiis est vel repellat voluptas quas tenetur! Sint non doloribus incidunt magni modi inventore minus, nesciunt facilis. Repellat saepe consequuntur quam accusamus accusantium harum sapiente nostrum cupiditate ullam maxime, quisquam earum, fugiat ex quasi! Debitis, delectus ullam! Voluptates voluptas assumenda libero facilis impedit voluptate maiores consectetur, eum cum quibusdam ipsa sapiente, deleniti, sit quae debitis ullam distinctio atque totam doloribus rem aliquam! Nam molestias ducimus accusamus illo rerum maiores recusandae, aperiam sequi, dolore sed perferendis? Quaerat delectus neque saepe dicta voluptatibus quibusdam quod, debitis, quas vitae dolorum consequatur explicabo eligendi temporibus sint voluptatem eveniet modi eaque nisi odit pariatur? Eveniet, facere quidem! Vitae perspiciatis molestiae ut. Repudiandae dolorem quod pariatur sequi quia, laudantium, assumenda sint laborum quae magnam, aperiam est suscipit tempora magni! Est, aliquid. Velit provident fugit id aperiam non iste, cupiditate quaerat fuga inventore modi autem ea quos, impedit tempora, dolorum quidem molestias in laborum! Voluptatibus, est repellat? Eveniet nostrum voluptate nemo illo reiciendis nesciunt, magnam animi quis, optio voluptatum nisi sed aspernatur tempora incidunt perferendis voluptatibus corrupti, eius maiores nobis culpa. Iste, quod commodi a sed iure minus incidunt doloribus inventore praesentium quae, laborum accusantium aspernatur mollitia? Quia magni aut neque deleniti, iure molestiae distinctio, quis deserunt repellat tempore adipisci eum voluptatibus reiciendis? Obcaecati et quidem eligendi, voluptatum reprehenderit, totam sed veritatis repellat quos impedit amet! Laborum qui eum ducimus assumenda expedita!</div>
+            <div className="lg:w-1/2 lg:block hidden"></div>
+            <div className="pt-25 lg:w-1/2 lg:pt-15 h-full z-40">
+                <div className="flex flex-col overflow-scroll h-[70vh] gap-5 lg:gap-5 lg:pt-20 pt-10  px-10 lg:pr-20">
+                    <motion.h1
+                        initial={{ opacity: 0, y: -30 }}
+                        whileInView="visible"
+                        viewport={{ once: false }}
+                        variants={itemVariants}
+                        className="lg:text-4xl text-3xl font-medium">Hello, I'm <span className="font-black inline-block rotatedAnimation tracking-tighter" >Janardan Mondal</span></motion.h1>
+                    <motion.h1
+                        initial={{ opacity: 0, y: -40 }}
+                        whileInView="visible"
+                        viewport={{ once: false }}
+                        variants={itemVariants}
+                        className="lg:text-4xl text-3xl font-semibold">A {" "}
+                        <span className="text-pink-500 max-md:text-2xl">
+                            <Typed
+                                strings={["Frontend Developer", "React Enthusiast", "UI/UX Explorer"]}
+                                typeSpeed={80}
+                                backSpeed={50}
+                                loop
+                            />
+                        </span>
+                    </motion.h1>
+                    {experiences.map((exp, i) => (
+                        <div key={i} className="grid grid-cols-[40px_1fr] gap-6 relative z-10">
+
+                            {/* Center: Line & Dot */}
+                            <div className="relative flex flex-col items-center">
+                                {/* Top line */}
+                                {i !== 0 && <div className="h-1/2 w-0.5 bg-purple-600" />}
+                                {/* Dot */}
+                                <div className="w-4 h-4 rounded-full bg-purple-600 border-4 border-gray-900 z-10" />
+                                {/* Bottom line */}
+                                {i !== experiences.length - 1 && <div className="h-1/2 w-0.5 bg-purple-600" />}
+                            </div>
+
+                            {/* Right: Content */}
+                            <motion.div
+                                custom={i}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: false }}
+                                variants={itemVariants}
+                                className="space-y-2 max-md:bg-[rgba(183,190,209,0.20)] p-2 rounded"
+                            >
+                                {/* <h3 className="text-lg font-bold">{exp.title}</h3> */}
+                                {/* <p className="text-sm font-semibold text-purple-300">{exp.company}</p> */}
+                                <ul className="list-disc list-inside lg:text-gray-100  text-sm space-y-1">
+                                    {exp.points.map((point, idx) => (
+                                        <p key={idx} className="text-base lg:text-lg">{point}</p>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </motion.div>
     </>);
 };

@@ -17,8 +17,75 @@
     .text-shadow-lg {
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     }
+
+    .high-voltage-shadow {
+        text-shadow: 1px 1px 2px #00f0ff, 0 0 8px #ff7700, 0 0 14px #ae90f0;
+    }
 }
 
-body::-webkit-scrollbar {
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    scroll-behavior: smooth;
+}
+
+/* in your CSS file */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
     display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Animation */
+
+
+.rotatedAnimation {
+    font-size: 2rem;
+    /* background: linear-gradient(135deg, #00f0ff, #ff7700, #ae90f0); */
+    background: linear-gradient(135deg, #ff7700, #fff, #008000);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    animation: backgroundMove 4s ease infinite;
+}
+
+/* Animate the gradient background */
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animate the text-shadow glow */
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 4px #00f0ff, 0 0 8px #ff7700, 0 0 12px #ae90f0;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #00f0ff, 0 0 18px #ff7700, 0 0 24px #ae90f0;
+    }
+
+    100% {
+        text-shadow: 0 0 4px #00f0ff, 0 0 8px #ff7700, 0 0 12px #ae90f0;
+    }
 }

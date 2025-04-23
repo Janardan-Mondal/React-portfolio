@@ -20,13 +20,13 @@ const App = () => {
         return <Home key="home" />;
     }
   };
-  // console.log(activePage);
+
   return (
     <div
-      className="w-full min-h-screen overflow-auto bg-cover bg-center bg-no-repeat relative"
+      className="w-screen h-screen relative"
       style={{ background: 'linear-gradient(135deg, #0f0c29, #302b63, #24243e)' }}
     >
-      <img src={my_img} alt="" className="fixed bottom-0 lg:left-20 left-0" />
+      <img src={my_img} alt="" className="absolute bottom-0 lg:left-20 left-0" />
 
       <Navbar setActivePage={setActivePage} activePage={activePage} />
       <AnimatePresence mode="wait">
