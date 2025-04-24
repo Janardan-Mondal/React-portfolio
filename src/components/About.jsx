@@ -5,10 +5,10 @@ import cssImg from "../assets/css.png";
 import jsImg from "../assets/js.png";
 import reactImg from "../assets/react.png";
 import tailwindImg from "../assets/tailwind.png";
+import gsapImg from "../assets/GSAP.png";
 import motiomImg from "../assets/motion-3.png";
-import gsapImg from "../assets/gsap.png";
 
-// motion
+
 const About = () => {
 
     const experiences = [
