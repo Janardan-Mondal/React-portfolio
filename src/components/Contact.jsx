@@ -1,7 +1,28 @@
 import { motion } from "framer-motion";
-import React from "react";
-// motion
+import React, { useState } from "react";
+// useState
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const phoneNumber = "916289204816"; // Replace with your WhatsApp number
+        const text = `Name: ${formData.name}\nSubject: ${formData.subject}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
+        const encodedText = encodeURIComponent(text);
+        const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedText}`;
+
+        window.open(whatsappURL, "_blank");
+    };
 
     const pageVariants = {
         initial: { opacity: 0, y: 20 },
@@ -18,13 +39,59 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="text-white flex justify-end items-center h-screen">
         <div className="lg:w-1/2 lg:block hidden"></div>
-        <div className="pt-25 lg:w-1/2 lg:pt-15 h-full text-red-500 z-40 ">
-            <div className="flex flex-col overflow-scroll h-[80vh] gap-5 lg:gap-10 lg:pt-20 pt-10  px-10 ">
-                <h1 className="text-5xl font-bold">Hello, I'm</h1>
-                <h1 className="text-5xl font-bold">John Doe</h1>
-                <p className="text-lg">I am a software engineer with a passion for building web applications. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus pariatur, numquam minus voluptates unde quo, a nemo qui, natus laborum deserunt non? Eveniet quae maxime fugit, cum minima molestiae labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam amet ex accusantium nulla, praesentium minima eos placeat dolores tempora corporis, eius sequi qui deserunt in voluptatibus explicabo commodi, deleniti quo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quis esse cum illo accusamus sed quasi adipisci libero, odit optio nulla nam dolore reiciendis porro distinctio id fugit ipsam sequi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa inventore reprehenderit ad neque sit? Dignissimos dicta id vero quod ut accusamus eaque laborum porro quas voluptas, at atque cum eius.</p>
-                <button className="bg-blue-500 text-white rounded mb-4 w-1/2">Learn More</button>
-            </div>
+        <div className="pt-25 lg:w-1/2 lg:pt-15 h-full z-40 ">
+            <form onSubmit={handleSubmit} className="p-4 border-none rounded-lg shadow-md md:w-1/2 m-auto mt-3.5">
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0 }}>
+                    <label>Name:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name... "
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="border-none p-2 w-full outline-amber-100"
+                    />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.15 }}>
+                    <label>Subject:</label>
+                    <input
+                        placeholder="What is booking reason!"
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="border-none outline-amber-100 p-2 w-full"
+                    />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.30 }}>
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Mail Address"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="border-none outline-amber-100 p-2 w-full"
+                    />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.45 }}>
+                    <label>Message:</label>
+                    <textarea
+                        name="message"
+                        placeholder="Describe shortly with dates you want... !!!"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        className="border-none outline-amber-100 p-2 w-full"
+                    />
+                </motion.div>
+                <motion.button initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.60 }} type="submit" className="mt-3 bg-green-500 text-white p-2 rounded">
+                    Send to WhatsApp
+                </motion.button>
+            </form>
         </div>
     </motion.div>;
 };

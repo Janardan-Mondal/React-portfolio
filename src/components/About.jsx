@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import React from "react";
+import htmlImg from "../assets/html.png";
+import cssImg from "../assets/css.png";
+import jsImg from "../assets/js.png";
+import reactImg from "../assets/react.png";
+import tailwindImg from "../assets/tailwind.png";
+import motiomImg from "../assets/motion-3.png";
+import gsapImg from "../assets/gsap.png";
 
 // motion
 const About = () => {
@@ -39,11 +46,20 @@ const About = () => {
             ]
         },
         {
-            title: "Senior Front-End Developer & UI/UX Designer",
+            title: "Skills",
 
-            company: "StudioNow",
+            company: "",
             points: [
-                "My focus is on writing clean, performant code and delivering pixel-perfect designs that not only look great but also function seamlessly across devices. I'm constantly learning and evolving, staying up-to-date with the latest trends and best practices in frontend development."
+                ""
+            ],
+            skills: [
+                { name: "HTML", image: htmlImg, level: 90 },
+                { name: "CSS", image: cssImg, level: 90 },
+                { name: "JavaScript", image: jsImg, level: 70 },
+                { name: "React", image: reactImg, level: 60 },
+                { name: "Tailwind", image: tailwindImg, level: 80 },
+                { name: "GSAP", image: gsapImg, level: 30 },
+                { name: "Framer Motion", image: motiomImg, level: 50 },
             ]
         },
     ];
@@ -102,7 +118,7 @@ const About = () => {
                             >
                                 <motion.h3 className="text-lg font-bold lg:text-2xl text-[#FF6EC4]">{exp.title}</motion.h3>
                                 <p className="text-sm font-semibold text-purple-300">{exp.company}</p>
-                                <p className="list-disc list-inside text-white lg:text-gray-100  text-sm space-y-1">
+                                <ul className="list-disc list-inside text-white lg:text-gray-100  text-sm space-y-1">
                                     {exp.school && (
                                         exp.school.map((school, idx) => (
                                             <div key={idx}>
@@ -111,12 +127,27 @@ const About = () => {
                                                 <p className="ml-5">{school.degree}</p>
                                             </div>
                                         ))
-
                                     )}
                                     {exp.points.map((point, idx) => (
                                         <p key={idx} className="text-base  lg:text-lg">{point}</p>
                                     ))}
-                                </p>
+                                    {exp.skills && (
+                                        <div className="flex flex-wrap justify-center items-center gap-8">
+                                            {exp.skills.map((skill, idx) => (
+                                                <div key={idx} className="flex flex-col items-center justify-center bg-white/5 backdrop-blur-md rounded-2xl p-4 shadow-xl hover:scale-105 hover:shadow-2xl transition-transform">
+                                                    <img src={skill.image} alt={skill.name} className="w-8 h-8" />
+                                                    <span className="text-sm text-gray-300">{skill.name}</span>
+                                                    <div className="w-full h-2 mt-1 bg-white/10 rounded-full overflow-hidden">
+                                                        <div
+                                                            className="h-full bg-green-400 rounded-full"
+                                                            style={{ width: `${skill.level}%` }}
+                                                        ></div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </ul>
                             </motion.div>
                         </div>
                     ))}
