@@ -37,7 +37,7 @@ const About = () => {
             },
             {
                 name: "West Bengal Board Secondary Education",
-                date: "2017",
+                date: "2015",
                 degree: "Secondary / Matriculation Certificate"
             }
             ],
